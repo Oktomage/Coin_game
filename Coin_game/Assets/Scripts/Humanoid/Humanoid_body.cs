@@ -16,6 +16,10 @@ public class Humanoid_body : MonoBehaviour
     public float Attack_speed;
     public float Attack_range;
 
+    [Header("Bools")]
+    public bool Can_move;
+    public bool Can_attack;
+
     //Consts
     public const float MAX_MOVE_SPEED = 10;
 
@@ -23,22 +27,79 @@ public class Humanoid_body : MonoBehaviour
     internal SpriteRenderer Render;
     internal Rigidbody2D Rb2d;
 
+    internal GameObject Health_bar_obj;
+
     #region Initial functions
 
     private void Get_components()
     {
         Render = this.gameObject.GetComponent<SpriteRenderer>();
         Rb2d = this.gameObject.GetComponent<Rigidbody2D>();
+
+        Health_bar_obj = Create_health_bar();
+    }
+
+    private void Set_initial_humanoid_state()
+    {
+        //Set
+        Can_move = true;
+        Can_attack = true;
     }
 
     public void Configure(float hlth, float dmg, float mv_spd, float atck_spd, float atck_rng)
     {
         Get_components();
+
+        //Set
+        Max_health = hlth;
+        Health = Max_health;
+
+        Damage = dmg;
+        
+        Move_speed = (MAX_MOVE_SPEED * mv_spd);
+        
+        Attack_speed = atck_spd;
+        Attack_range = atck_rng;
+
+        Set_initial_humanoid_state();
     }
 
     public void Configure(Enemy_scriptable enemy)
     {
         Get_components();
+
+        //Set
+        Max_health = enemy.Enemy_Health;
+        Health = Max_health;
+
+        Damage = enemy.Enemy_Damage;
+
+        Move_speed = (MAX_MOVE_SPEED * enemy.Enemy_Move_speed);
+
+        Attack_speed = enemy.Enemy_Attack_speed;
+        Attack_range = enemy.Enemy_Attack_range;
+
+        Set_initial_humanoid_state();
+    }
+
+    private GameObject Create_health_bar()
+    {
+        GameObject health_bar = new GameObject();
+
+        return health_bar;
+    }
+
+    #endregion
+
+    #region Core functions
+
+    public IEnumerator Attack_cooldown()
+    {
+        Can_attack = false;
+
+        yield return new WaitForSeconds(Attack_speed);
+
+        Can_attack = true;
     }
 
     #endregion

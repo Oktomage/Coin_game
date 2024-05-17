@@ -1,11 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class Player_main : MonoBehaviour
 {
     [Header("Body")]
     public Humanoid_body Body;
+
+    [Header("Components")]
+    public GameObject Flash_light_obj;
+
+    private void Start()
+    {
+        Configure();
+    }
 
     public void Configure()
     {
@@ -15,11 +24,33 @@ public class Player_main : MonoBehaviour
 
     private void Update()
     {
+        Move();
         
+        if(Input.GetMouseButtonDown(0))
+        {
+            Attack();
+        }
     }
 
     private void Move()
     {
+        //Apply velocity to rigid body
+        Body.Rb2d.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * Body.Move_speed, Input.GetAxisRaw("Vertical") * Body.Move_speed);
 
+        //Flash point to cursos
+        Vector2 mouse_pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 dir = mouse_pos - new Vector2(transform.position.x, transform.position.y);
+
+        Flash_light_obj.transform.up = dir;
+    }
+
+    private void Attack()
+    {
+        if(Body.Can_attack)
+        {
+
+            //Start cooldown
+            Body.StartCoroutine("Attack_cooldown");
+        }
     }
 }
