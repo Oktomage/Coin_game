@@ -171,3 +171,5 @@ MonoBehaviour:
   Move_speed: 0
   Attack_speed: 0
   Attack_range: 0
+  Can_move: 0
+  Can_attack: 0

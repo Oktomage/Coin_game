@@ -84,7 +84,13 @@ public class Humanoid_body : MonoBehaviour
 
     private GameObject Create_health_bar()
     {
-        GameObject health_bar = new GameObject();
+        //Create it
+        float y_offset = 1.5f * transform.localScale.y;
+        Vector3 pos = new Vector3(transform.position.x, transform.position.y + y_offset, transform.position.z);
+        GameObject health_bar = Instantiate(Resources.Load("Prefabs/Entitys/Health_bar"), pos, Quaternion.identity) as GameObject;
+
+        //Set parent
+        health_bar.transform.SetParent(this.transform);
 
         return health_bar;
     }

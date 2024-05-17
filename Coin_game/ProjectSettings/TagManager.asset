@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Coin
   - Enemy
+  - Galatron
   layers:
   - Default
   - TransparentFX

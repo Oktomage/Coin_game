@@ -16,11 +16,15 @@ public class Player_main : MonoBehaviour
         Configure();
     }
 
+    #region Initial functions
+
     public void Configure()
     {
         //Configure body
-        Body.Configure(20, 1, 0.8f, 1, 1);
+        Body.Configure(20, 1, 0.5f, 1, 1);
     }
+
+    #endregion
 
     private void Update()
     {
@@ -31,6 +35,8 @@ public class Player_main : MonoBehaviour
             Attack();
         }
     }
+
+    #region Core functions
 
     private void Move()
     {
@@ -53,4 +59,6 @@ public class Player_main : MonoBehaviour
             Body.StartCoroutine("Attack_cooldown");
         }
     }
+
+    #endregion
 }

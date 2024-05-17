@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 7667331198737970967}
   - component: {fileID: 908677527815844436}
   - component: {fileID: 1310042018736882971}
+  - component: {fileID: 3464116704395022569}
+  - component: {fileID: 6464004848688088960}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -190,6 +192,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Body: {fileID: 908677527815844436}
   Flash_light_obj: {fileID: 7246206450439242389}
+--- !u!114 &3464116704395022569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4094266198054126860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c77b013769dade241b214cf490c820d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6464004848688088960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4094266198054126860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58e7a3d3ca2250944af6173fc3d8156a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Galatron_picked_up_event:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &6319257847040454062
 GameObject:
   m_ObjectHideFlags: 0
