@@ -28,7 +28,15 @@ public class Player_main : MonoBehaviour
 
     private void Update()
     {
-        Move();
+        if(Body.Can_move)
+        {
+            Move();
+        }
+        //Lock position
+        else if(Body.Rb2d.bodyType != RigidbodyType2D.Static)
+        {
+            Body.Rb2d.velocity = Vector2.zero;
+        }
         
         if(Input.GetMouseButtonDown(0))
         {
@@ -87,6 +95,16 @@ public class Player_main : MonoBehaviour
                     //Enter ship
                     hit.collider.gameObject.GetComponent<Space_ship_main>().Enter(this.gameObject);
                     break;
+
+                case "President":
+                    //Talk
+                    hit.collider.gameObject.GetComponent<President_main>().Talk();
+                    break;
+
+                case "Vault":
+                    //Enter vault
+                    hit.collider.gameObject.GetComponent<Vault_main>().Enter();
+                    break;
             }
         }
     }
@@ -94,6 +112,9 @@ public class Player_main : MonoBehaviour
     private void Flash_light()
     {
         Flash_light_obj.SetActive(!Flash_light_obj.activeSelf);
+
+        //Sound
+        Sound_system.instance.Create_sound("Flash_light_button", 1f);
     }
 
     #endregion

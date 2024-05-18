@@ -10,8 +10,10 @@ public class Game_manager_main : MonoBehaviour
     [Header("Stats")]
     public string Objective_desc;
 
-    [Header("Bools")]
-    public bool Player_have_galatron;
+    //Internal vars
+    internal bool Player_have_galatron;
+    internal bool Player_talked_to_president;
+    internal bool Player_survived_the_president;
 
     private void Awake()
     {
@@ -27,12 +29,6 @@ public class Game_manager_main : MonoBehaviour
 
     private void Configure()
     {
-        //Clear all listeners
-        /*
-        Events_main.instance.Galatron_picked_up_event.RemoveAllListeners();
-        Events_main.instance.Player_get_the_ship_event.RemoveAllListeners();
-        */
-
         //Set events listeners based on level
         switch (SceneManager.GetActiveScene().name)
         {
@@ -41,13 +37,27 @@ public class Game_manager_main : MonoBehaviour
                 Events_main.instance.Player_get_the_ship_event.AddListener(Spawn_ship_aberrations);
 
                 //Set
+                Day_cycle_system.instance.Set_day_time(0);
+
                 Objective_desc = "Roube o 'Galatron' de dentro do templo.";
                 break;
 
             case "Level_2":
+                Events_main.instance.Player_gave_the_coin_to_president_event.AddListener(Get_next_level_2_objective);
+                Events_main.instance.Player_get_in_the_president_vaults_event.AddListener(Player_got_in_the_vault);
+                Events_main.instance.Player_get_out_the_vaults_event.AddListener (Get_next_level_2_objective_2);
 
                 //Set
+                Player_have_galatron = true;
+
+                Day_cycle_system.instance.Set_day_time(1);
+
                 Objective_desc = "Converse com o presidente sobre o seu achado.";
+                break;
+
+            case "Level_3":
+                //Set
+                Player_have_galatron = true;
                 break;
         }
     }
@@ -99,6 +109,36 @@ public class Game_manager_main : MonoBehaviour
     #endregion
 
     #region Level_2 events
+
+    private void Get_next_level_2_objective()
+    {
+        Objective_desc = "Corra para o vault do presidente (Fica ao lado do lago na frente da casa dele).";
+    }
+
+    private void Player_got_in_the_vault()
+    {
+        //Clear all enemies
+        GameObject[] All_enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+        foreach (GameObject enemy in All_enemies)
+        {
+            Destroy(enemy);
+        }
+
+        //Set
+        Day_cycle_system.instance.Set_day_time(0.4f);
+
+        //Call black screen
+        UI_manager.instance.StartCoroutine(UI_manager.instance.Show_black_screen(5f, "14 horas depois..."));
+
+        //Call event
+        Events_main.instance.Player_get_out_the_vaults_event.Invoke();
+    }
+
+    private void Get_next_level_2_objective_2()
+    {
+        Objective_desc = "Pegue seu carro é vá até a cidade.";
+    }
 
     #endregion
 

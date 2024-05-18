@@ -9,6 +9,10 @@ TagManager:
   - Galatron
   - Ally
   - Ship
+  - President
+  - Car
+  - Vault
+  - Sun
   layers:
   - Default
   - TransparentFX

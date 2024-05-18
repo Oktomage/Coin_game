@@ -13,8 +13,9 @@ public class Space_ship_main : MonoBehaviour
             Events_main.instance.Player_get_the_ship_event.Invoke();
 
             //Disable plr controls
-            plr_obj.GetComponent<Humanoid_body>().Capsule_coll.enabled = false;
+            plr_obj.GetComponent<Humanoid_body>().Can_move = false;
 
+            plr_obj.GetComponent<Humanoid_body>().Capsule_coll.enabled = false;
             plr_obj.GetComponent<Humanoid_body>().Rb2d.bodyType = RigidbodyType2D.Static;
 
             //Set plr as a ship parent

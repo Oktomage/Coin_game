@@ -31,7 +31,7 @@ public class Weather_system : MonoBehaviour
             Vector2 pos = new Vector2(Player.transform.position.x + Random.Range(-20f, 20f), Player.transform.position.y + Random.Range(10f, 20f));
 
             //Create it
-            float speed = Random.Range(5f, 10f);
+            float speed = Random.Range(10f, 20f);
 
             Create_drop_entity(pos, speed);
         }
