@@ -15,6 +15,7 @@ public class Humanoid_body : MonoBehaviour
     public float Move_speed;
     public float Attack_speed;
     public float Attack_range;
+    public float View_range;
 
     [Header("Bools")]
     public bool Can_move;
@@ -28,6 +29,7 @@ public class Humanoid_body : MonoBehaviour
     internal Rigidbody2D Rb2d;
 
     internal GameObject Health_bar_obj;
+    internal GameObject Target_obj;
 
     #region Initial functions
 
@@ -68,7 +70,7 @@ public class Humanoid_body : MonoBehaviour
     {
         Get_components();
 
-        //Set
+        //Get
         Max_health = enemy.Enemy_Health;
         Health = Max_health;
 
@@ -78,6 +80,10 @@ public class Humanoid_body : MonoBehaviour
 
         Attack_speed = enemy.Enemy_Attack_speed;
         Attack_range = enemy.Enemy_Attack_range;
+        View_range = enemy.Enemy_View_range;
+
+        //Set
+        transform.localScale *= enemy.Enemy_Size_multiplier;
 
         Set_initial_humanoid_state();
     }

@@ -34,6 +34,11 @@ public class Player_main : MonoBehaviour
         {
             Attack();
         }
+
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            Interact();
+        }
     }
 
     #region Core functions
@@ -57,6 +62,21 @@ public class Player_main : MonoBehaviour
 
             //Start cooldown
             Body.StartCoroutine("Attack_cooldown");
+        }
+    }
+
+    private void Interact()
+    {
+        RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, 1, Vector2.zero);
+
+        foreach(RaycastHit2D hit in hits)
+        {
+            switch(hit.collider.tag)
+            {
+                case "Galatron":
+                    hit.collider.gameObject.GetComponent<Galatron_entity>().Pick_up();
+                    break;
+            }
         }
     }
 

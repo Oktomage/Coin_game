@@ -8,6 +8,7 @@ public class Enemy_scriptable : ScriptableObject
     [Header("Stats")]
     public string Enemy_Name;
     public float Enemy_Health;
+    public float Enemy_Size_multiplier;
 
     [Space(10)]
     public float Enemy_Damage;
@@ -17,4 +18,5 @@ public class Enemy_scriptable : ScriptableObject
     public float Enemy_Move_speed;
     public float Enemy_Attack_speed;
     public float Enemy_Attack_range;
+    public float Enemy_View_range;
 }
