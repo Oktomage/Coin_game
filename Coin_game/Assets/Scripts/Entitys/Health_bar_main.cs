@@ -30,7 +30,7 @@ public class Health_bar_main : MonoBehaviour
             Bar_value = Body.Health / Body.Max_health;
 
             //Set
-            Bar_obj.transform.localScale = new Vector3(Bar_value * 2, Bar_obj.transform.localScale.y, 1);
+            Bar_obj.transform.localScale = new Vector3(Bar_value, Bar_obj.transform.localScale.y, 1);
         }
     }
 }

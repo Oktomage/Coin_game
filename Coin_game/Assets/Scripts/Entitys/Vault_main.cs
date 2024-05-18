@@ -12,7 +12,7 @@ public class Vault_main : MonoBehaviour
             Game_manager_main.instance.Player_survived_the_president = true;
 
             //Sound
-            Sound_system.instance.Create_sound("Vault_door", 1f);
+            Sound_system.instance.Create_sound("Vault_door", 0.7f);
 
             //Call event
             Events_main.instance.Player_get_in_the_president_vaults_event.Invoke();

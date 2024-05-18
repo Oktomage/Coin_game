@@ -41,7 +41,10 @@ public class Humanoid_body : MonoBehaviour
         Rb2d = this.gameObject.GetComponent<Rigidbody2D>();
         Capsule_coll = this.gameObject.GetComponent<CapsuleCollider2D>();
 
+        //Create health bar
         Health_bar_obj = Create_health_bar();
+
+        Health_bar_obj.GetComponent<Health_bar_main>().Configure(this);
     }
 
     private void Set_initial_humanoid_state()
@@ -115,6 +118,11 @@ public class Humanoid_body : MonoBehaviour
         yield return new WaitForSeconds(Attack_speed);
 
         Can_attack = true;
+    }
+
+    public void Take_damage(float dmg)
+    {
+        Health -= dmg;
     }
 
     #endregion

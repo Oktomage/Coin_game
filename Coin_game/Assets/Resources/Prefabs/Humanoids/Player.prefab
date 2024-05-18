@@ -96,6 +96,9 @@ MonoBehaviour:
   Player_get_out_the_vaults_event:
     m_PersistentCalls:
       m_Calls: []
+  Player_get_in_the_car_event:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &6846228708837428190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -497,13 +500,14 @@ GameObject:
   - component: {fileID: 5446026984736835773}
   - component: {fileID: 457547274749351261}
   - component: {fileID: 1214009072228390329}
+  - component: {fileID: 5759362177084523383}
   m_Layer: 0
   m_Name: Flash_light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1470382053014921703
 Transform:
   m_ObjectHideFlags: 0
@@ -630,6 +634,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ca7bf66819da8c4b9e4b628862493ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5759362177084523383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7246206450439242389}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1db7b1f44807dd4689d068081266382, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Fluctuation_frequency: 0.2
+  Falloff_intensity: 0.5
+  Light: {fileID: 0}
 --- !u!1001 &7525150910965110846
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -638,6 +657,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1615183031579095803}
     m_Modifications:
+    - target: {fileID: 5739284293554269568, guid: c3003ced546209f43ae67448f7e17e56, type: 3}
+      propertyPath: m_Intensity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8567529174869601456, guid: c3003ced546209f43ae67448f7e17e56, type: 3}
       propertyPath: m_Name
       value: SUN

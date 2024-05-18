@@ -46,6 +46,7 @@ public class Game_manager_main : MonoBehaviour
                 Events_main.instance.Player_gave_the_coin_to_president_event.AddListener(Get_next_level_2_objective);
                 Events_main.instance.Player_get_in_the_president_vaults_event.AddListener(Player_got_in_the_vault);
                 Events_main.instance.Player_get_out_the_vaults_event.AddListener (Get_next_level_2_objective_2);
+                Events_main.instance.Player_get_in_the_car_event.AddListener(Player_got_in_the_car);
 
                 //Set
                 Player_have_galatron = true;
@@ -58,6 +59,10 @@ public class Game_manager_main : MonoBehaviour
             case "Level_3":
                 //Set
                 Player_have_galatron = true;
+
+                Day_cycle_system.instance.Set_day_time(0);
+
+                Objective_desc = "Tente achar alguém vivo.";
                 break;
         }
     }
@@ -69,7 +74,7 @@ public class Game_manager_main : MonoBehaviour
     private void Spawn_temple_aberrations()
     {
         Vector2 pos = new Vector2(2, 165);
-        int amount = 3;
+        int amount = 1;
 
         //Spawn it
         for(int i = 0; i < amount; i++)
@@ -138,6 +143,15 @@ public class Game_manager_main : MonoBehaviour
     private void Get_next_level_2_objective_2()
     {
         Objective_desc = "Pegue seu carro é vá até a cidade.";
+    }
+
+    private void Player_got_in_the_car()
+    {
+        //Call black screen
+        UI_manager.instance.StartCoroutine(UI_manager.instance.Show_black_screen(10f, ""));
+
+        //Change level
+        StartCoroutine(Change_level(6f, 2));
     }
 
     #endregion

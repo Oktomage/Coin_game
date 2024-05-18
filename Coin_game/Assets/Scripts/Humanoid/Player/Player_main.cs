@@ -22,6 +22,9 @@ public class Player_main : MonoBehaviour
     {
         //Configure body
         Body.Configure(20, 1, 0.5f, 1, 1);
+
+        //Start routine
+        StartCoroutine("Drop_coins_while_carrying_galatron");
     }
 
     #endregion
@@ -105,6 +108,11 @@ public class Player_main : MonoBehaviour
                     //Enter vault
                     hit.collider.gameObject.GetComponent<Vault_main>().Enter();
                     break;
+
+                case "Car":
+                    //Enter car
+                    hit.collider.gameObject.GetComponent<Car_main>().Enter();
+                    break;
             }
         }
     }
@@ -115,6 +123,24 @@ public class Player_main : MonoBehaviour
 
         //Sound
         Sound_system.instance.Create_sound("Flash_light_button", 1f);
+    }
+
+    #endregion
+
+    #region Routine functions
+
+    private IEnumerator Drop_coins_while_carrying_galatron()
+    {
+        yield return new WaitForSeconds(0.3f);
+
+        //Drop coin
+        if(Game_manager_main.instance.Player_have_galatron)
+        {
+
+        }
+
+        //Loop
+        StartCoroutine("Drop_coins_while_carrying_galatron");
     }
 
     #endregion

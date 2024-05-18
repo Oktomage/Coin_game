@@ -16,8 +16,8 @@ MonoBehaviour:
   Enemy_Level: 3
   Enemy_Health: 40
   Enemy_Size_multiplier: 4
-  Enemy_Damage: 5
+  Enemy_Damage: 3
   Enemy_Move_speed: 0.6
   Enemy_Attack_speed: 1.5
-  Enemy_Attack_range: 1.5
+  Enemy_Attack_range: 3
   Enemy_View_range: 20

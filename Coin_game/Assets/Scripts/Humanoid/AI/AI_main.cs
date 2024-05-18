@@ -48,7 +48,7 @@ public class AI_main : MonoBehaviour
     {
         if(Body.Target_obj != null)
         {
-            Move_towards_player();
+            Move_towards_target();
         }
         //Lock position
         else
@@ -80,18 +80,33 @@ public class AI_main : MonoBehaviour
         }
     }
 
-    private void Move_towards_player()
+    private void Move_towards_target()
     {
         //Get direction
         Vector2 dir = (Body.Target_obj.transform.position - transform.position).normalized;
 
         //Move
         Body.Rb2d.velocity = dir * Body.Move_speed;
+
+        //Try attack
+        float distance = Vector2.Distance(transform.position, Body.Target_obj.transform.position);
+
+        if(distance <= Body.Attack_range)
+        {
+            Attack();
+        }
     }
 
     private void Attack()
     {
+        if(Body.Can_attack)
+        {
+            //Start cooldown
+            Body.StartCoroutine("Attack_cooldown");
 
+            //Damage target
+            Body.Target_obj.GetComponent<Humanoid_body>().Take_damage(Body.Damage);
+        }
     }
 
     #endregion
