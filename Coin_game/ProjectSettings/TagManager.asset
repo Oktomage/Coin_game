@@ -7,6 +7,8 @@ TagManager:
   - Coin
   - Enemy
   - Galatron
+  - Ally
+  - Ship
   layers:
   - Default
   - TransparentFX

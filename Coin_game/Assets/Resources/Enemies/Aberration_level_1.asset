@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: Aberration_level_1
   m_EditorClassIdentifier: 
   Enemy_Name: "Aberra\xE7\xE3o (NV: 1)"
+  Enemy_Level: 1
   Enemy_Health: 10
-  Enemy_Size_multiplier: 1
+  Enemy_Size_multiplier: 1.5
   Enemy_Damage: 2
-  Enemy_Move_speed: 0.3
+  Enemy_Move_speed: 0.35
   Enemy_Attack_speed: 2
   Enemy_Attack_range: 1
-  Enemy_View_range: 4
+  Enemy_View_range: 20

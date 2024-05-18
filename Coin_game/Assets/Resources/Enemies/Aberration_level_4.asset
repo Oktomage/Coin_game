@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e8ef5a85c69a7224685252e19fce653a, type: 3}
-  m_Name: Aberration_level_2
+  m_Name: Aberration_level_4
   m_EditorClassIdentifier: 
-  Enemy_Name: "Aberra\xE7\xE3o (NV: 2)"
-  Enemy_Level: 2
-  Enemy_Health: 20
-  Enemy_Size_multiplier: 2
-  Enemy_Damage: 3
-  Enemy_Move_speed: 0.4
-  Enemy_Attack_speed: 2
-  Enemy_Attack_range: 1
+  Enemy_Name: "Aberra\xE7\xE3o (NV: 4)"
+  Enemy_Level: 3
+  Enemy_Health: 40
+  Enemy_Size_multiplier: 4
+  Enemy_Damage: 5
+  Enemy_Move_speed: 0.6
+  Enemy_Attack_speed: 1.5
+  Enemy_Attack_range: 1.5
   Enemy_View_range: 20

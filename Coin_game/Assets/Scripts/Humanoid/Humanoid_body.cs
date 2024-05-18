@@ -25,8 +25,10 @@ public class Humanoid_body : MonoBehaviour
     public const float MAX_MOVE_SPEED = 10;
 
     //Internal vars
+    //Components
     internal SpriteRenderer Render;
     internal Rigidbody2D Rb2d;
+    internal CapsuleCollider2D Capsule_coll;
 
     internal GameObject Health_bar_obj;
     internal GameObject Target_obj;
@@ -37,6 +39,7 @@ public class Humanoid_body : MonoBehaviour
     {
         Render = this.gameObject.GetComponent<SpriteRenderer>();
         Rb2d = this.gameObject.GetComponent<Rigidbody2D>();
+        Capsule_coll = this.gameObject.GetComponent<CapsuleCollider2D>();
 
         Health_bar_obj = Create_health_bar();
     }

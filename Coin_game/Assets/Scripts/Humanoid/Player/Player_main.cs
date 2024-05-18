@@ -39,6 +39,11 @@ public class Player_main : MonoBehaviour
         {
             Interact();
         }
+
+        if(Input.GetKeyDown(KeyCode.F))
+        {
+            Flash_light();
+        }
     }
 
     #region Core functions
@@ -74,10 +79,21 @@ public class Player_main : MonoBehaviour
             switch(hit.collider.tag)
             {
                 case "Galatron":
+                    //Pick up
                     hit.collider.gameObject.GetComponent<Galatron_entity>().Pick_up();
+                    break;
+
+                case "Ship":
+                    //Enter ship
+                    hit.collider.gameObject.GetComponent<Space_ship_main>().Enter(this.gameObject);
                     break;
             }
         }
+    }
+
+    private void Flash_light()
+    {
+        Flash_light_obj.SetActive(!Flash_light_obj.activeSelf);
     }
 
     #endregion

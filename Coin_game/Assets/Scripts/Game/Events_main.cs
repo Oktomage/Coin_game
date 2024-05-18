@@ -10,6 +10,7 @@ public class Events_main : MonoBehaviour
     //Events
     public UnityEvent Galatron_picked_up_event;
     public UnityEvent Player_view_a_aberration_event;
+    public UnityEvent Player_get_the_ship_event;
 
     private void Awake()
     {

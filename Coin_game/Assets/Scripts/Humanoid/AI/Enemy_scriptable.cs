@@ -7,6 +7,7 @@ public class Enemy_scriptable : ScriptableObject
 {
     [Header("Stats")]
     public string Enemy_Name;
+    public int Enemy_Level;
     public float Enemy_Health;
     public float Enemy_Size_multiplier;
 

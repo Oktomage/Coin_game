@@ -9,6 +9,9 @@ public class Galatron_entity : MonoBehaviour
         //Call event
         Events_main.instance.Galatron_picked_up_event.Invoke();
 
+        //Set
+        Game_manager_main.instance.Player_have_galatron = true;
+
         //Sound
         Sound_system.instance.Create_sound("Mystery_1", 1);
 
