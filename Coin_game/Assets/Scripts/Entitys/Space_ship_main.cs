@@ -34,6 +34,10 @@ public class Space_ship_main : MonoBehaviour
 
     private void Start_engine()
     {
+        //Sound
+        Sound_system.instance.Create_sound("Rocket_engine", 1f);
+
+        //Particles
         Rocket_engine_particle.SetActive(true);
     }
 

@@ -27,7 +27,10 @@ public class Health_bar_main : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
 
             //Update value
-            Bar_value = Body.Health / Body.Max_health;
+            Bar_value = (Body.Health / Body.Max_health);
+
+            //Clamp 0f to 1f
+            Bar_value = Mathf.Clamp01(Bar_value);
 
             //Set
             Bar_obj.transform.localScale = new Vector3(Bar_value, Bar_obj.transform.localScale.y, 1);

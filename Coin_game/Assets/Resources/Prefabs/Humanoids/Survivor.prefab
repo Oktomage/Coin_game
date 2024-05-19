@@ -169,7 +169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Talk_txt:
   - O que ??? Um ser humano normal ?
-  - "Olha... eu n\xE3o sei \xE9 voc\xEA, mas \xE9 ... *ah* melhor correr."
+  - "Olha... eu n\xE3o sei quem \xE9 voc\xEA, mas \xE9 ... *ah* melhor correr."
   - "Voc\xEA n\xE3o est\xE1 seguro aqui,  *ahh* ... eles podem aparecer a qualquer
     momento."
   - "Aqueles malditos... *ahh*, ouvi dizer que isso tudo foi causado pela gan\xE2ncia."
@@ -177,7 +177,7 @@ MonoBehaviour:
   - Usando de um artefato alienigena antigo.
   - "Mas isso teve um pre\xE7o *hehe*... Veja o que esse dinheiro almaldi\xE7oado
     fez com o mundo."
-  - Espero que o maldito que *ahh...* *suspiro*, esteja com esse artefato morra !
+  - Espero que o maldito *ahh...* *suspiro*, que esteja com esse artefato morra !
   - '*suspiro profundo*.'
   Can_talk: 1
 --- !u!1 &7766620340143914588
