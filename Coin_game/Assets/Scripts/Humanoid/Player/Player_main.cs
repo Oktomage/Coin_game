@@ -41,16 +41,19 @@ public class Player_main : MonoBehaviour
             Body.Rb2d.velocity = Vector2.zero;
         }
         
+        //Attack
         if(Input.GetMouseButtonDown(0))
         {
             Attack();
         }
 
+        //Interect
         if(Input.GetKeyDown(KeyCode.E))
         {
             Interact();
         }
 
+        //Flash light
         if(Input.GetKeyDown(KeyCode.F))
         {
             Flash_light();
@@ -113,6 +116,11 @@ public class Player_main : MonoBehaviour
                     //Enter car
                     hit.collider.gameObject.GetComponent<Car_main>().Enter();
                     break;
+
+                case "Survivor":
+                    //Talk
+                    hit.collider.gameObject.GetComponent<Survivor_main>().Talk();
+                    break;
             }
         }
     }
@@ -131,12 +139,17 @@ public class Player_main : MonoBehaviour
 
     private IEnumerator Drop_coins_while_carrying_galatron()
     {
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(1f);
 
         //Drop coin
         if(Game_manager_main.instance.Player_have_galatron)
         {
+            GameObject coin = Instantiate(Resources.Load("Prefabs/Entitys/Coin"), transform.position, Quaternion.identity) as GameObject;
 
+            //Configure coin
+            Vector2 dir = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
+
+            coin.GetComponent<Coin_entity>().Add_force_at_direction(dir, 2);
         }
 
         //Loop

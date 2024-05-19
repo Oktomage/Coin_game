@@ -12,6 +12,9 @@ public class President_main : MonoBehaviour
 
     private void Start()
     {
+        //Set
+        Can_talk = true;
+
         //Add event listener
         Events_main.instance.Player_gave_the_coin_to_president_event.AddListener(Turn_into_monster);
     }

@@ -7,8 +7,8 @@ public class Coin_entity : MonoBehaviour
     [Header("Components")]
     public Rigidbody2D Rb2d;
 
-    public void Add_force_at_direction(Vector2 dir)
+    public void Add_force_at_direction(Vector2 dir, float force)
     {
-
+        Rb2d.AddForce(dir * force, ForceMode2D.Impulse);
     }
 }

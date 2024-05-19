@@ -38,6 +38,7 @@ public class Jump_scare_system : MonoBehaviour
         {
             //Sound
             Sound_system.instance.Create_sound("Jump_scare_2", 1);
+            Sound_system.instance.Create_sound("Rapid_heartbeat", 1);
 
             //Start cooldown
             StartCoroutine("Jump_scare_cooldown");

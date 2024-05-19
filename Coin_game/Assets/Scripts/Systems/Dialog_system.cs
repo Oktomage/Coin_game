@@ -76,6 +76,9 @@ public class Dialog_system : MonoBehaviour
                 //Set
                 TDialog.text = text_generated;
 
+                //Sound
+                Sound_system.instance.Create_sound("Text_sfx", 0.3f);
+
                 yield return new WaitForSeconds(Char_speed);
             }
 

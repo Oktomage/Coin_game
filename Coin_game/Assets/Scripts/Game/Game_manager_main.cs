@@ -14,6 +14,7 @@ public class Game_manager_main : MonoBehaviour
     internal bool Player_have_galatron;
     internal bool Player_talked_to_president;
     internal bool Player_survived_the_president;
+    internal bool Player_talked_to_survivor;
 
     private void Awake()
     {
@@ -57,6 +58,9 @@ public class Game_manager_main : MonoBehaviour
                 break;
 
             case "Level_3":
+                Events_main.instance.Survivor_died_event.AddListener(Get_next_level_3_objective);
+                Events_main.instance.Survivor_died_event.AddListener(Spawn_aberrations_outside);
+
                 //Set
                 Player_have_galatron = true;
 
@@ -152,6 +156,20 @@ public class Game_manager_main : MonoBehaviour
 
         //Change level
         StartCoroutine(Change_level(6f, 2));
+    }
+
+    #endregion
+
+    #region Level 3_events
+
+    private void Get_next_level_3_objective()
+    {
+        Objective_desc = "???";
+    }
+
+    private void Spawn_aberrations_outside()
+    {
+
     }
 
     #endregion

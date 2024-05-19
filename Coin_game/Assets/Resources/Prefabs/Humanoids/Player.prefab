@@ -99,6 +99,9 @@ MonoBehaviour:
   Player_get_in_the_car_event:
     m_PersistentCalls:
       m_Calls: []
+  Survivor_died_event:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &6846228708837428190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,6 +142,7 @@ GameObject:
   - component: {fileID: 7667331198737970967}
   - component: {fileID: 908677527815844436}
   - component: {fileID: 1310042018736882971}
+  - component: {fileID: 5539518700636402466}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -318,6 +322,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Body: {fileID: 908677527815844436}
   Flash_light_obj: {fileID: 7246206450439242389}
+--- !u!114 &5539518700636402466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4094266198054126860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6188d2541a532e94ab26ae1110611bd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Body: {fileID: 908677527815844436}
+  Footstep_delay: 0.5
 --- !u!1 &6319257847040454062
 GameObject:
   m_ObjectHideFlags: 0
