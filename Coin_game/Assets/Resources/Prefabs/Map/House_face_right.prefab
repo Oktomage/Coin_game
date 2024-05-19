@@ -179,7 +179,7 @@ HingeJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: -0.5, y: 0}
-  m_ConnectedAnchor: {x: -157.75, y: 54.6}
+  m_ConnectedAnchor: {x: -94.55, y: -8.9}
   m_UseConnectedAnchor: 1
   m_UseMotor: 0
   m_Motor:
@@ -442,7 +442,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -6
+  m_SortingOrder: -7
   m_Sprite: {fileID: 7482667652216324306, guid: a6f3f11d07c56e04eb5129e52223f672, type: 3}
   m_Color: {r: 0.22641169, g: 0.17661978, b: 0.5943396, a: 1}
   m_FlipX: 0
@@ -958,7 +958,7 @@ HingeJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: -0.5, y: 0}
-  m_ConnectedAnchor: {x: -157.75, y: 49.6}
+  m_ConnectedAnchor: {x: -94.55, y: -13.9}
   m_UseConnectedAnchor: 1
   m_UseMotor: 0
   m_Motor:
@@ -1725,7 +1725,7 @@ HingeJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: -0.5, y: 0}
-  m_ConnectedAnchor: {x: -143.7, y: 50.1}
+  m_ConnectedAnchor: {x: -80.5, y: -13.4}
   m_UseConnectedAnchor: 1
   m_UseMotor: 0
   m_Motor:
