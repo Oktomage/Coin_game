@@ -213,6 +213,7 @@ public class Game_manager_main : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
 
+        //Load new level
         SceneManager.LoadScene(level_id);
     }
 
