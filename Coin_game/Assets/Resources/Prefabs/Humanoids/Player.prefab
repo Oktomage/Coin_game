@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4613461852774925245}
   - component: {fileID: 6846228708837428190}
   - component: {fileID: 2158159471714486647}
+  - component: {fileID: 7721480829841688926}
   m_Layer: 0
   m_Name: Systems
   m_TagString: Untagged
@@ -102,6 +103,9 @@ MonoBehaviour:
   Survivor_died_event:
     m_PersistentCalls:
       m_Calls: []
+  Player_get_out_survivor_house_event:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &6846228708837428190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,6 +132,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Day_value: 0
   Sun_light: {fileID: 2866748189356045758}
+--- !u!114 &7721480829841688926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1408461649232042712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8837cebb944acd14baf54ae6633208a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4094266198054126860
 GameObject:
   m_ObjectHideFlags: 0

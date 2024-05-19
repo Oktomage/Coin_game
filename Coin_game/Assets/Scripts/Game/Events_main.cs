@@ -17,6 +17,7 @@ public class Events_main : MonoBehaviour
     public UnityEvent Player_get_out_the_vaults_event;
     public UnityEvent Player_get_in_the_car_event;
     public UnityEvent Survivor_died_event;
+    public UnityEvent Player_get_out_survivor_house_event;
 
     private void Awake()
     {

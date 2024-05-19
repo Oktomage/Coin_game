@@ -49,6 +49,7 @@ public class President_main : MonoBehaviour
 
         //Particles
         Instantiate(Resources.Load("Prefabs/Entitys/Big_blood"), transform.position, Quaternion.identity);
+        Particle_system.instance.Create_particle("Big_blood_splash_particle", transform.position);
 
         //Destroy president
         Destroy(this.gameObject);

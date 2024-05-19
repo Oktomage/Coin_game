@@ -59,7 +59,7 @@ public class Game_manager_main : MonoBehaviour
 
             case "Level_3":
                 Events_main.instance.Survivor_died_event.AddListener(Get_next_level_3_objective);
-                Events_main.instance.Survivor_died_event.AddListener(Spawn_aberrations_outside);
+                Events_main.instance.Player_get_out_survivor_house_event.AddListener(Spawn_aberrations_outside_survivor_house);
 
                 //Set
                 Player_have_galatron = true;
@@ -112,7 +112,7 @@ public class Game_manager_main : MonoBehaviour
         Sound_system.instance.Create_sound("Souls_scream_1", 1f);
 
         //Change level
-        StartCoroutine(Change_level(6f, 1));
+        StartCoroutine(Change_level(6f, 2));
     }
 
     #endregion
@@ -155,7 +155,7 @@ public class Game_manager_main : MonoBehaviour
         UI_manager.instance.StartCoroutine(UI_manager.instance.Show_black_screen(10f, ""));
 
         //Change level
-        StartCoroutine(Change_level(6f, 2));
+        StartCoroutine(Change_level(6f, 3));
     }
 
     #endregion
@@ -167,9 +167,32 @@ public class Game_manager_main : MonoBehaviour
         Objective_desc = "???";
     }
 
-    private void Spawn_aberrations_outside()
+    private void Spawn_aberrations_outside_survivor_house()
     {
+        Vector2 pos = new Vector2(-60, 29);
+        int amount = 5;
 
+        //Spawn it
+        for (int i = 0; i < amount; i++)
+        {
+            Spawn_enemy(pos, Resources.Load<Enemy_scriptable>("Enemies/Aberration_level_4"));
+        }
+
+        //Sound
+        Sound_system.instance.Create_sound("Tension_1", 1f);
+
+        //Call next step
+        StartCoroutine(Wait_to_call_black_screen(4f));
+
+        //Change level
+        StartCoroutine(Change_level(14f, 4));
+    }
+
+    IEnumerator Wait_to_call_black_screen(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        UI_manager.instance.StartCoroutine(UI_manager.instance.Show_black_screen(10f, ""));
     }
 
     #endregion

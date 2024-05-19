@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Space_ship_main : MonoBehaviour
 {
+    [Header("Components")]
+    public GameObject Rocket_engine_particle;
+
+    #region Core functions
+
     public void Enter(GameObject plr_obj)
     {
         //If player have galatron, get in 
@@ -29,6 +34,8 @@ public class Space_ship_main : MonoBehaviour
 
     private void Start_engine()
     {
-
+        Rocket_engine_particle.SetActive(true);
     }
+
+    #endregion
 }

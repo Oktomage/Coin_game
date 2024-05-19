@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class Particle_system : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static Particle_system instance;
+
+    private void Awake()
     {
-        
+        instance = this;
     }
 
-    // Update is called once per frame
-    void Update()
+    #region Core functions
+
+    public void Create_particle(string particleName, Vector2 pos)
     {
-        
+        GameObject particle = Instantiate(Resources.Load("Prefabs/Particles/" + particleName), pos, Quaternion.identity) as GameObject;
+
+        particle.transform.position = pos;
     }
+
+    #endregion
 }
